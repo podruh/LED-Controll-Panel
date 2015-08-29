@@ -4,15 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LED_Controll_Panel"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="LEDControllPanel" Height="500" Width="500">
-    <Grid>
-        <Slider x:Name="sliderRed" HorizontalAlignment="Left" Margin="25,54,0,0" VerticalAlignment="Top" Height="30" Width="250" Maximum="255" ValueChanged="slider_ValueChanged" SmallChange="1" Value="127.5"/>
-        <Label x:Name="labelRed" Content="Červená" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,23,0,0"/>
-        <Slider x:Name="sliderGreen" HorizontalAlignment="Left" Margin="25,120,0,0" VerticalAlignment="Top" Height="30" Width="250" Maximum="255" ValueChanged="slider_ValueChanged" SmallChange="1" Value="127.5"/>
-        <Label x:Name="labelGreen" Content="Zelená" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,89,0,0"/>
-        <Slider x:Name="sliderBlue" HorizontalAlignment="Left" Margin="25,186,0,0" VerticalAlignment="Top" Height="30" Width="250" Maximum="255" ValueChanged="slider_ValueChanged" SmallChange="1" Value="127.5"/>
-        <Label x:Name="labelBlue" Content="Modrá" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,155,0,0"/>
+        Title="LEDControllPanel" Height="500" Width="489" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Grid RenderTransformOrigin="1.195,0.48">
+        <ComboBox x:Name="comboBoxPort" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="341,14,0,0" DropDownOpened="comboBoxPort_DropDownOpened" SelectionChanged="comboBoxPort_SelectionChanged"/>
+        <Label x:Name="label" Content="Controller port" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="248,10,0,0"/>
+        <ContentControl Content="ContentControl" HorizontalAlignment="Left" Height="50" Margin="245,-70,0,0" VerticalAlignment="Top" Width="5"/>
+        <xctk:ColorCanvas x:Name="rgbPicker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" SelectedColorChanged="ColorCanvas_SelectedColorChanged"/>
+        <Button x:Name="lightShowButton" Content="LightShow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="386,41,0,0" Click="lightShowButton_Click"/>
+
+
 
     </Grid>
 </Window>
