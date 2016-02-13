@@ -6,15 +6,19 @@
         xmlns:local="clr-namespace:LED_Controll_Panel"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="LEDControllPanel" Height="500" Width="489" Loaded="Window_Loaded" Closed="Window_Closed">
-    <Grid RenderTransformOrigin="1.195,0.48">
-        <ComboBox x:Name="comboBoxPort" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="341,14,0,0" DropDownOpened="comboBoxPort_DropDownOpened" SelectionChanged="comboBoxPort_SelectionChanged"/>
-        <Label x:Name="label" Content="Controller port" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="248,10,0,0"/>
+        Title="LEDControllPanel" Height="500" Width="619" Loaded="Window_Loaded" Closed="Window_Closed" Closing="Window_Closing">
+    <Grid RenderTransformOrigin="1.195,0.48" Margin="0,0,0
+          ,0">
+        <ComboBox x:Name="comboBoxPort" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="481,10,0,0" DropDownOpened="comboBoxPort_DropDownOpened" SelectionChanged="comboBoxPort_SelectionChanged"/>
+        <Label x:Name="label" Content="Controller port" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="388,10,0,0"/>
         <ContentControl Content="ContentControl" HorizontalAlignment="Left" Height="50" Margin="245,-70,0,0" VerticalAlignment="Top" Width="5"/>
         <xctk:ColorCanvas x:Name="rgbPicker" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0" SelectedColorChanged="ColorCanvas_SelectedColorChanged"/>
-        <Button x:Name="lightShowButton" Content="LightShow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="386,41,0,0" Click="lightShowButton_Click"/>
-
-
-
+        <Button x:Name="lightShowButton" Content="LightShow" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="248,45,0,0" Click="lightShowButton_Click"/>
+        <Button x:Name="rndButton" Content="Random" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="248,70,0,0" Click="rndButton_Click"/>
+        <xctk:IntegerUpDown x:Name="lightShowStepUpDown" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="374,45,0,0" Watermark="Zvolte krok" Minimum="1" Maximum="50"/>
+        <xctk:IntegerUpDown x:Name="rndStepUpDown" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="374,70,0,0" Watermark="Zvolte krok" Minimum="1" Maximum="50"/>
+        <xctk:IntegerUpDown x:Name="lightShowSpeedUpDown" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="481,45,0,0" Watermark="Zvolte rychlost"/>
+        <xctk:IntegerUpDown x:Name="rndSpeedUpDown" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="481,70,0,0" Watermark="Zvolte rychlost"/>
+        <CheckBox x:Name="startupCheckBox" Content="Run on Windows startup" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,288,0,0" Checked="startupCheckBox_Checked"/>
     </Grid>
 </Window>
